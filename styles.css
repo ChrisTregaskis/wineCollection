@@ -1,8 +1,11 @@
 * { box-sizing: border-box }
 
+html { background-color: #EEF2F7; }
+
 body {
     margin: 0;
-    font-family: 'Raleway', sans-serif;;
+    font-family: 'Raleway', sans-serif;
+    font-size: 16px;
 }
 
 /* ====== NAV STICKY ====== */
@@ -11,6 +14,9 @@ nav {
     overflow: auto;
     background-color: #f7f9fb;
     possition: fixed;
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.7)),url("Resources/imgs/grapes-863703_1920.jpg");
+    background-size: cover;
+    background-position: center;
 }
 
 .navTop {
@@ -25,7 +31,6 @@ nav {
     width: 100px;
     height: 100px;
     display: inline-block;
-    margin: 0;
     border-radius: 50%;
     margin: 10px;
     border: 1px solid #fff;
@@ -37,10 +42,98 @@ nav {
 }
 
 .title h1 {
-    font-size: 40px;
+    font-size: 2.5rem;
     font-weight: 400;
-
+    letter-spacing: 1rem;
+    color: #f7f9fb;
 }
 
 /* ====== COLLECTION ====== */
+
+/*section {*/
+/*    padding-top: 20px;*/
+/*    background-image: url("Resources/imgs/backgroundImage-Colour.jpg");*/
+/*    background-size: cover;*/
+/*    background-position: center;*/
+/*}*/
+
+section {
+    padding-top: 20px;
+    background-color: #EEF2F7;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    overflow: visible;
+
+}
+
+.surround {
+    float: left;
+    padding: 20px;
+}
+
+article {
+    width: 46%;
+    height: 380px;
+    float: left;
+    border-radius: 3%;
+    margin: 30px 20px 50px 20px;
+    /*background-color: red;*/
+}
+
+.wine-img {
+    height: 350px;
+    width: 230px;
+    float: left;
+    border-radius: 3%;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+    0 12.5px 10px rgba(0, 0, 0, 0.06),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+    0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+    0 100px 80px rgba(0, 0, 0, 0.12);
+}
+
+
+.wine-img-1 { background-image: url("Resources/imgs/BABYLONSTOREN_Nebukadnesar_x700.jpg")}
+
+.wine-img-2 { background-image: url("Resources/imgs/HAYWIRE_Gamay_Noir_Okanagan_Valley_Crush_Pad_Winery_x700.jpg")}
+
+.wine-img-3 { background-image: url("Resources/imgs/ALVES_DE_SOUSA_Quinta_da_Gaivosa_LBV_Porto_ee1be277-aea9-485f-ab1d-eea4557f2de2_x700.jpg")}
+
+.wine-img-4 { background-image: url("Resources/imgs/BODEGAS_VINATIGO_Gual_6bfe6033-ac6c-42dc-a08e-169db6b7da7f_x700.jpg")}
+
+.content {
+    float: left;
+    max-width: 230px;
+    height: 350px;
+    margin-left: 10px;
+    /*background-color: purple;*/
+}
+
+h3 {
+    margin: 40px 0;
+    letter-spacing: 0.2rem;
+    font-size: 1.2rem;
+}
+
+ul {
+    list-style: none;
+    text-align: left;
+    padding: 0;
+}
+
+li {
+    margin: 6px 0;
+}
+
+li span {
+    letter-spacing: 0.1rem;
+    font-size: 1rem;
+    font-weight: 300;
+}
 
