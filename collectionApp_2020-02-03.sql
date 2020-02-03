@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.7.29)
 # Database: collectionApp
-# Generation Time: 2020-02-03 14:23:40 +0000
+# Generation Time: 2020-02-03 14:39:33 +0000
 # ************************************************************
 
 
@@ -32,7 +32,7 @@ CREATE TABLE `wines` (
   `origin` varchar(100) DEFAULT NULL,
   `profile` varchar(100) DEFAULT NULL,
   `body` varchar(100) DEFAULT NULL,
-  `abv` float(3,1) DEFAULT NULL,
+  `abv` float(3,1) unsigned DEFAULT NULL,
   `cheese` varchar(100) DEFAULT NULL,
   `link` varchar(500) DEFAULT NULL,
   PRIMARY KEY (`id`)
