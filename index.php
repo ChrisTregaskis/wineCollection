@@ -29,6 +29,69 @@
         </div>
     </nav>
 
+    <section class="collection">
+        <div class="container">
+            <div class="surround">
+                <article>
+                    <div class="wine-img"></div>
+                    <div class="content">
+                        <h3>Babylonstoren Nebukadnesar</h3>
+                        <ul>
+                            <li><span>Year: </span>2017</li>
+                            <li><span>Origin: </span>South Africa</li>
+                            <li><span>Profile: </span>Dry red wine</li>
+                            <li><span>Body: </span>Full Bodied</li>
+                            <li><span>ABV: </span>14.0%</li>
+                            <li><span>Cheese: </span>Pont l'Eveque (soft)</li>
+                        </ul>
+                    </div>
+                </article>
+                <article>
+                    <div class="wine-img"></div>
+                    <div class="content">
+                        <h3>Haywire White Label Gamay Noir</h3>
+                        <ul>
+                            <li><span>Year: </span>2016</li>
+                            <li><span>Origin: </span>Canada</li>
+                            <li><span>Profile: </span>Dry red wine</li>
+                            <li><span>Body: </span>Medium Bodied</li>
+                            <li><span>ABV: </span>13.0%</li>
+                            <li><span>Cheese: </span>Camembert</li>
+                        </ul>
+                    </div>
+                </article>
+                <article>
+                    <div class="wine-img"></div>
+                    <div class="content">
+                        <h3>Babylonstoren Nebukadnesar</h3>
+                        <ul>
+                            <li><span>Year: </span>2017</li>
+                            <li><span>Origin: </span>South Africa</li>
+                            <li><span>Profile: </span>Dry red wine</li>
+                            <li><span>Body: </span>Full Bodied</li>
+                            <li><span>ABV: </span>14.0%</li>
+                            <li><span>Cheese: </span>Pont l'Eveque (soft)</li>
+                        </ul>
+                    </div>
+                </article>
+                <article>
+                    <div class="wine-img"></div>
+                    <div class="content">
+                        <h3>Haywire White Label Gamay Noir</h3>
+                        <ul>
+                            <li><span>Year: </span>2016</li>
+                            <li><span>Origin: </span>Canada</li>
+                            <li><span>Profile: </span>Dry red wine</li>
+                            <li><span>Body: </span>Medium Bodied</li>
+                            <li><span>ABV: </span>13.0%</li>
+                            <li><span>Cheese: </span>Camembert</li>
+                        </ul>
+                    </div>
+                </article>
+            </div>
+        </div>
+
+    </section>
 
 </body>
 
