@@ -24,7 +24,7 @@
         <div class="navTop">
             <div class="logo"><a href="#"></a> </div>
             <div class="title">
-                <h1>The Wine Collection</h1>
+                <h1>The Wine Collection.</h1>
             </div>
         </div>
     </nav>
@@ -33,7 +33,7 @@
         <div class="container">
             <div class="surround">
                 <article>
-                    <div class="wine-img"></div>
+                    <div class="wine-img wine-img-1"></div>
                     <div class="content">
                         <h3>Babylonstoren Nebukadnesar</h3>
                         <ul>
@@ -47,7 +47,7 @@
                     </div>
                 </article>
                 <article>
-                    <div class="wine-img"></div>
+                    <div class="wine-img wine-img-2"></div>
                     <div class="content">
                         <h3>Haywire White Label Gamay Noir</h3>
                         <ul>
@@ -61,7 +61,7 @@
                     </div>
                 </article>
                 <article>
-                    <div class="wine-img"></div>
+                    <div class="wine-img wine-img-3"></div>
                     <div class="content">
                         <h3>Babylonstoren Nebukadnesar</h3>
                         <ul>
@@ -75,9 +75,9 @@
                     </div>
                 </article>
                 <article>
-                    <div class="wine-img"></div>
+                    <div class="wine-img wine-img-4"></div>
                     <div class="content">
-                        <h3>Haywire White Label Gamay Noir</h3>
+                        <h3>Haywire Gamay Noir</h3>
                         <ul>
                             <li><span>Year: </span>2016</li>
                             <li><span>Origin: </span>Canada</li>
