@@ -11,12 +11,14 @@ body {
 /* ====== NAV STICKY ====== */
 
 nav {
+    width: 100%;
     overflow: auto;
     background-color: #f7f9fb;
-    possition: fixed;
+    position: fixed;
     background-image: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.7)),url("Resources/imgs/grapes-863703_1920.jpg");
     background-size: cover;
     background-position: center;
+    padding-bottom: 20px;
 }
 
 .navTop {
@@ -50,13 +52,6 @@ nav {
 
 /* ====== COLLECTION ====== */
 
-/*section {*/
-/*    padding-top: 20px;*/
-/*    background-image: url("Resources/imgs/backgroundImage-Colour.jpg");*/
-/*    background-size: cover;*/
-/*    background-position: center;*/
-/*}*/
-
 section {
     padding-top: 20px;
     background-color: #EEF2F7;
@@ -66,21 +61,20 @@ section {
     max-width: 1100px;
     margin: 0 auto;
     overflow: visible;
+    margin-top: 120px;
 
 }
 
 .surround {
-    float: left;
     padding: 20px;
 }
 
 article {
-    width: 46%;
+    width: 470px;
     height: 380px;
     float: left;
     border-radius: 3%;
     margin: 30px 20px 50px 20px;
-    /*background-color: red;*/
 }
 
 .wine-img {
@@ -112,7 +106,6 @@ article {
     max-width: 230px;
     height: 350px;
     margin-left: 10px;
-    /*background-color: purple;*/
 }
 
 h3 {
