@@ -2,7 +2,7 @@
 
 function getWines($db)
 {
-    $query = $db->prepare();
+    $query = $db->prepare('SELECT `id`, `name`, `year`, `origin`, `profile`, `body`, `abv`, `cheese`, `link`, `img` FROM `wines`;');
     $query->execute();
     return $query->fetchAll();
 }
