@@ -1,7 +1,10 @@
 <?php
 
+require_once 'functions.php';
+require_once 'connectDB.php';
 
-
+$db = connectDB();
+$getWines = getWines($db)
 
 
 
