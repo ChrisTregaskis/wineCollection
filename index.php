@@ -46,6 +46,7 @@ $wines = getWines($db);
                             <li><span>ABV: </span>14.0%</li>
                             <li><span>Cheese: </span>Pont l'Eveque (soft)</li>
                         </ul>
+                        <div class="view-more-link"><a href="#">View More</a></div>
                     </div>
                 </article>
                 <article class="wine-item">
@@ -60,6 +61,7 @@ $wines = getWines($db);
                             <li><span>ABV: </span>13.0%</li>
                             <li><span>Cheese: </span>Camembert</li>
                         </ul>
+                        <div class="view-more-link"><a href="#">View More</a></div>
                     </div>
                 </article>
                 <article class="wine-item">
@@ -74,6 +76,7 @@ $wines = getWines($db);
                             <li><span>ABV: </span>14.0%</li>
                             <li><span>Cheese: </span>Pont l'Eveque (soft)</li>
                         </ul>
+                        <div class="view-more-link"><a href="#">View More</a></div>
                     </div>
                 </article>
                 <article class="wine-item">
@@ -88,6 +91,7 @@ $wines = getWines($db);
                             <li><span>ABV: </span>13.0%</li>
                             <li><span>Cheese: </span>Camembert</li>
                         </ul>
+                        <div class="view-more-link"><a href="#">View More</a></div>
                     </div>
                 </article>
             </div>
@@ -99,6 +103,3 @@ $wines = getWines($db);
 
 </html>
 
-<?php
-
-//var_dumpPre($wines);
