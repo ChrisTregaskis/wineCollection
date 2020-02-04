@@ -4,8 +4,7 @@ require_once 'functions.php';
 require_once 'connectDB.php';
 
 $db = connectDB();
-$getWines = getWines($db)
-
+$wines = getWines($db);
 
 
 ?>
@@ -99,3 +98,7 @@ $getWines = getWines($db)
 </body>
 
 </html>
+
+<?php
+
+//var_dumpPre($wines);
