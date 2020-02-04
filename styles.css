@@ -118,6 +118,7 @@ ul {
     list-style: none;
     text-align: left;
     padding: 0;
+    margin-bottom: 40px;
 }
 
 li {
@@ -130,3 +131,14 @@ li span {
     font-weight: 300;
 }
 
+.view-more-link {
+    width: 230px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    padding: 2px;
+    border-bottom: 1.4px solid black;
+    letter-spacing: 0.4rem;
+}
