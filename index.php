@@ -32,7 +32,7 @@
     <section class="collection">
         <div class="container">
             <div class="surround">
-                <article>
+                <article class="wine-item">
                     <div class="wine-img wine-img-1"></div>
                     <div class="content">
                         <h3>Babylonstoren Nebukadnesar</h3>
@@ -46,7 +46,7 @@
                         </ul>
                     </div>
                 </article>
-                <article>
+                <article class="wine-item">
                     <div class="wine-img wine-img-2"></div>
                     <div class="content">
                         <h3>Haywire White Label Gamay Noir</h3>
@@ -60,7 +60,7 @@
                         </ul>
                     </div>
                 </article>
-                <article>
+                <article class="wine-item">
                     <div class="wine-img wine-img-3"></div>
                     <div class="content">
                         <h3>Babylonstoren Nebukadnesar</h3>
@@ -74,7 +74,7 @@
                         </ul>
                     </div>
                 </article>
-                <article>
+                <article class="wine-item">
                     <div class="wine-img wine-img-4"></div>
                     <div class="content">
                         <h3>Haywire Gamay Noir</h3>
