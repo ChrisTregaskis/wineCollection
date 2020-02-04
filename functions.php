@@ -7,8 +7,20 @@ function getWines($db)
     return $query->fetchAll();
 }
 
-function var_dumpPre($variabletoDump) {
-    echo '<pre>';
-    var_dump($variabletoDump);
-    echo '</pre>';
+function displayWines(array $wines): string
+{
+    if (!array_key_exists('name', $wines) ||
+       (!array_key_exists('year', $wines)) ||
+       (!array_key_exists('origin', $wines)) ||
+       (!array_key_exists('profile', $wines)) ||
+       (!array_key_exists('body', $wines)) ||
+       (!array_key_exists('abv', $wines)) ||
+       (!array_key_exists('cheese', $wines)) ||
+       (!array_key_exists('link', $wines)) ||
+       (!array_key_exists('img', $wines)))
+    {
+        return 'error! array keys missing from displayWines function';
+    }
+
+
 }
