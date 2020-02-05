@@ -7,31 +7,12 @@ function getWines($db)
     return $query->fetchAll();
 }
 
-function var_dump_pre($a) {
-    echo '<pre>';
-    var_dump($a);
-    echo '</pre>';
-}
-
 function displayWines(array $wines): string
 {
-    if (!array_key_exists('name', $wines) ||
-       (!array_key_exists('year', $wines)) ||
-       (!array_key_exists('origin', $wines)) ||
-       (!array_key_exists('profile', $wines)) ||
-       (!array_key_exists('body', $wines)) ||
-       (!array_key_exists('abv', $wines)) ||
-       (!array_key_exists('cheese', $wines)) ||
-       (!array_key_exists('link', $wines)) ||
-       (!array_key_exists('img', $wines)))
-    {
-        return 'error! array keys missing from displayWines function';
-    }
-
     $result = '';
     foreach ($wines as $wine)
     {
-        $result = '<article class=\'wine-item\'>';
+        $result .= '<article class=\'wine-item\'>';
         $result .= '<div class=\'wine-img\' style=\'background-image: url(' . 'Resources/' . $wine['img'] . ')\'></div>';
         $result .= '<div class="content">';
         $result .= '<h3>' . $wine['name'] . '</h3>';
@@ -49,11 +30,3 @@ function displayWines(array $wines): string
     }
     return $result;
 }
-
-
-
-
-
-
-
-
