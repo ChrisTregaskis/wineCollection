@@ -1,9 +1,17 @@
 <?php
 
+require_once 'functions.php';
+require_once 'connectDB.php';
 
+$db = connectDB();
+$wines = getWines($db);
 
-
-
+$displayWines = '';
+if (keysExist($wines) == true) {
+    $displayWines = displayWines($wines);
+} else {
+    $displayWines = 'error! array keys missing from displayWines function';
+}
 
 ?>
 
@@ -12,7 +20,10 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <title>Wine Collection!</title>
+
+    <link rel="shortcut icon" href="favicon.ico" >
     <link rel="stylesheet" type="text/css" href="normalize.css">
     <link rel="stylesheet" type="text/css" href="styles.css">
     <link rel="stylesheet" type="text/css" href="queries.css">
@@ -28,71 +39,15 @@
             </div>
         </div>
     </nav>
-
     <section class="collection">
         <div class="container">
             <div class="surround">
-                <article class="wine-item">
-                    <div class="wine-img wine-img-1"></div>
-                    <div class="content">
-                        <h3>Babylonstoren Nebukadnesar</h3>
-                        <ul>
-                            <li><span>Year: </span>2017</li>
-                            <li><span>Origin: </span>South Africa</li>
-                            <li><span>Profile: </span>Dry red wine</li>
-                            <li><span>Body: </span>Full Bodied</li>
-                            <li><span>ABV: </span>14.0%</li>
-                            <li><span>Cheese: </span>Pont l'Eveque (soft)</li>
-                        </ul>
-                    </div>
-                </article>
-                <article class="wine-item">
-                    <div class="wine-img wine-img-2"></div>
-                    <div class="content">
-                        <h3>Haywire White Label Gamay Noir</h3>
-                        <ul>
-                            <li><span>Year: </span>2016</li>
-                            <li><span>Origin: </span>Canada</li>
-                            <li><span>Profile: </span>Dry red wine</li>
-                            <li><span>Body: </span>Medium Bodied</li>
-                            <li><span>ABV: </span>13.0%</li>
-                            <li><span>Cheese: </span>Camembert</li>
-                        </ul>
-                    </div>
-                </article>
-                <article class="wine-item">
-                    <div class="wine-img wine-img-3"></div>
-                    <div class="content">
-                        <h3>Babylonstoren Nebukadnesar</h3>
-                        <ul>
-                            <li><span>Year: </span>2017</li>
-                            <li><span>Origin: </span>South Africa</li>
-                            <li><span>Profile: </span>Dry red wine</li>
-                            <li><span>Body: </span>Full Bodied</li>
-                            <li><span>ABV: </span>14.0%</li>
-                            <li><span>Cheese: </span>Pont l'Eveque (soft)</li>
-                        </ul>
-                    </div>
-                </article>
-                <article class="wine-item">
-                    <div class="wine-img wine-img-4"></div>
-                    <div class="content">
-                        <h3>Haywire Gamay Noir</h3>
-                        <ul>
-                            <li><span>Year: </span>2016</li>
-                            <li><span>Origin: </span>Canada</li>
-                            <li><span>Profile: </span>Dry red wine</li>
-                            <li><span>Body: </span>Medium Bodied</li>
-                            <li><span>ABV: </span>13.0%</li>
-                            <li><span>Cheese: </span>Camembert</li>
-                        </ul>
-                    </div>
-                </article>
+                <?php echo $displayWines; ?>
             </div>
         </div>
-
     </section>
 
 </body>
 
 </html>
+
