@@ -9,7 +9,7 @@ $wines = getWines($db);
 if (keysExist($wines) == true) {
     $displayWines = displayWines($wines);
 } else {
-    $displayWines = 'error! array keys missing from displayWines function';
+    $displayWines = 'Error with input';
 }
 
 ?>
@@ -24,9 +24,9 @@ if (keysExist($wines) == true) {
 
     <link rel="shortcut icon" href="favicon.ico" >
     <link rel="stylesheet" type="text/css" href="normalize.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300i,400,600&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="styles.css">
     <link rel="stylesheet" type="text/css" href="queries.css">
-    <link href="https://fonts.googleapis.com/css?family=Raleway:300i,400,600&display=swap" rel="stylesheet">
 
 </head>
 <body>
