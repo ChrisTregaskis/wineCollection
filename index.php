@@ -5,7 +5,6 @@ require_once 'connectDB.php';
 
 $db = connectDB();
 $wines = getWines($db);
-$key_check = keysExist($wines);
 
 $displayWines = '';
 if (keysExist($wines) == true) {
