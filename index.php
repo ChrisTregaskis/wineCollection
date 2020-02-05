@@ -5,7 +5,13 @@ require_once 'connectDB.php';
 
 $db = connectDB();
 $wines = getWines($db);
-$displayWines = displayWines($wines);
+
+$displayWines = '';
+if (keysExist($wines) == true) {
+    $displayWines = displayWines($wines);
+} else {
+    $displayWines = 'error! array keys missing from displayWines function';
+}
 
 ?>
 
@@ -14,7 +20,11 @@ $displayWines = displayWines($wines);
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <title>Wine Collection!</title>
+
+    <link rel="shortcut icon" href="favicon.ico" >
+    <link rel="icon" href="animated_favicon1.gif" type="image/gif" >
     <link rel="stylesheet" type="text/css" href="normalize.css">
     <link rel="stylesheet" type="text/css" href="styles.css">
     <link rel="stylesheet" type="text/css" href="queries.css">
