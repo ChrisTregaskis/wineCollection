@@ -44,6 +44,7 @@ if (keysExist($wines) == true) {
         <div class="container">
             <div class="surround">
                 <?php echo $displayWines; ?>
+                <?php echo var_dump($wines); ?>
             </div>
         </div>
     </section>
