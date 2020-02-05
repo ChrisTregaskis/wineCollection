@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.7.29)
 # Database: chris_collection_app
-# Generation Time: 2020-02-05 15:07:54 +0000
+# Generation Time: 2020-02-05 15:47:16 +0000
 # ************************************************************
 
 
@@ -27,15 +27,15 @@ DROP TABLE IF EXISTS `wines`;
 
 CREATE TABLE `wines` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(100) DEFAULT NULL,
-  `year` year(4) DEFAULT NULL,
-  `origin` varchar(100) DEFAULT NULL,
-  `profile` varchar(100) DEFAULT NULL,
-  `body` varchar(100) DEFAULT NULL,
-  `abv` float(3,1) unsigned DEFAULT NULL,
-  `cheese` varchar(100) DEFAULT NULL,
-  `link` varchar(500) DEFAULT NULL,
-  `img` varchar(500) DEFAULT NULL,
+  `name` varchar(100) NOT NULL DEFAULT '',
+  `year` year(4) NOT NULL,
+  `origin` varchar(100) NOT NULL DEFAULT '',
+  `profile` varchar(100) NOT NULL DEFAULT '',
+  `body` varchar(100) NOT NULL DEFAULT '',
+  `abv` float(3,1) unsigned NOT NULL,
+  `cheese` varchar(100) NOT NULL DEFAULT '',
+  `link` varchar(500) NOT NULL DEFAULT '',
+  `img` varchar(500) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
