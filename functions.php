@@ -7,6 +7,34 @@ function getWines($db)
     return $query->fetchAll();
 }
 
+/**
+ * @param array $wines
+ * @return bool|string
+ */
+function keysExist(array $wines)
+{
+    $result = '';
+    foreach ($wines as $wine)
+    {
+        if (array_key_exists('name', $wine) &&
+            (array_key_exists('year', $wine)) &&
+            (array_key_exists('origin', $wine)) &&
+            (array_key_exists('profile', $wine)) &&
+            (array_key_exists('body', $wine)) &&
+            (array_key_exists('abv', $wine)) &&
+            (array_key_exists('cheese', $wine)) &&
+            (array_key_exists('link', $wine)) &&
+            (array_key_exists('img', $wine)))
+        {
+            $result = true;
+        } else {
+            $result = false;
+        }
+    }
+    return $result;
+
+}
+
 function displayWines(array $wines): string
 {
     $result = '';
