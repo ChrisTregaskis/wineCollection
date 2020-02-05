@@ -6,7 +6,6 @@ require_once 'connectDB.php';
 $db = connectDB();
 $wines = getWines($db);
 
-$displayWines = '';
 if (keysExist($wines) == true) {
     $displayWines = displayWines($wines);
 } else {
