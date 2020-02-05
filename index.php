@@ -24,7 +24,6 @@ if (keysExist($wines) == true) {
     <title>Wine Collection!</title>
 
     <link rel="shortcut icon" href="favicon.ico" >
-    <link rel="icon" href="animated_favicon1.gif" type="image/gif" >
     <link rel="stylesheet" type="text/css" href="normalize.css">
     <link rel="stylesheet" type="text/css" href="styles.css">
     <link rel="stylesheet" type="text/css" href="queries.css">
