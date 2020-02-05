@@ -8,8 +8,8 @@ function getWines($db)
 }
 
 /** FUNCTION make sure array keys exist
- * @param array $wines
- * @return bool|string
+ * @param array $wines, takes an associated array
+ * @return bool|string, return true if all keys exist otherwise false.
  */
 function keysExist(array $wines) : bool
 {
@@ -32,9 +32,12 @@ function keysExist(array $wines) : bool
         }
     }
     return $result;
-
 }
 
+/** FUNCTION to display each wine
+ * @param array $wines, takes an associated array
+ * @return string, returns the html code that gets echo'ed out
+ */
 function displayWines(array $wines): string
 {
     $result = '';
@@ -57,4 +60,6 @@ function displayWines(array $wines): string
         $result .= '</article>';
     }
     return $result;
+
 }
+
