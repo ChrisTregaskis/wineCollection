@@ -5,6 +5,7 @@ require_once 'connectDB.php';
 
 $db = connectDB();
 $wines = getWines($db);
+$key_check = keysExist($wines);
 
 $displayWines = '';
 if (keysExist($wines) == true) {
@@ -43,7 +44,6 @@ if (keysExist($wines) == true) {
         <div class="container">
             <div class="surround">
                 <?php echo $displayWines; ?>
-                <?php echo var_dump($wines); ?>
             </div>
         </div>
     </section>
