@@ -7,11 +7,11 @@ function getWines($db)
     return $query->fetchAll();
 }
 
-/**
+/** FUNCTION make sure array keys exist
  * @param array $wines
  * @return bool|string
  */
-function keysExist(array $wines)
+function keysExist(array $wines) : bool
 {
     $result = '';
     foreach ($wines as $wine)
