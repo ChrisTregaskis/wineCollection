@@ -77,7 +77,7 @@ function displayWines(array $wines): string {
  * @param string $input, input from PDO $_POST element
  * @return string, return the input if passed, throw error if not
  */
-function checkInputString($input) {
+function checkInputString(string $input): string {
     if (strlen($input) > 0 && strlen($input) < 250) {
         return $input;
     } else {
@@ -90,7 +90,7 @@ function checkInputString($input) {
  * @param $input, taken from $_POST year
  * @return int, return number if true, throw error if not
  */
-function checkInputNumYear($input) {
+function checkInputNumYear(string $input): string {
     $input_num = is_numeric($input) ? $input * 1 : $input = 'error!';
     if ($input_num > 1900 && $input_num < 2020) {
         return $input_num;
@@ -104,7 +104,7 @@ function checkInputNumYear($input) {
  * @param $input, taken from $_POST abv
  * @return int, return number int if true, throw error if not
  */
-function checkInputNumAbv($input) {
+function checkInputNumAbv(string $input): string {
     $input_num = is_numeric($input) ? $input * 1 : $input = 'error!';
     if ($input_num > 0 && $input_num < 100) {
         return $input_num;
