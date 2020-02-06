@@ -124,6 +124,20 @@ function filterSpecialChar($input) {
     return $item_returned;
 }
 
+/** verify if link is valid url
+ *
+ * @param $input, link input
+ * @return string, default link if not valid or link if valid
+ */
+function verifiedLink(string $input): string {
+    filter_var($input, FILTER_SANITIZE_URL);
+    if (filter_var($input, FILTER_VALIDATE_URL)) {
+        return $input;
+    } else {
+        return 'https://www.novelwines.co.uk/';
+    }
+}
+
 /** insert data into db
  *
  * @param $name
