@@ -46,7 +46,6 @@ class Stacktests extends TestCase
 
     //// ----- displayWines -----////
 
-
     //SUCCESS: return string with html elements if given assoc array with required keys
     public function test_s_displayWines_r_html_str()
     {
@@ -76,4 +75,91 @@ class Stacktests extends TestCase
         $case = displayWines($input1, $input2);
     }
 
+
+    //// ----- checkInputString -----////
+
+    //SUCCESS: return a string if input is desired length
+    public function test_s_checkInputString_r_str()
+    {
+        $expected = 'string';
+        $input = 'string';
+        $case = checkInputString($input);
+        $this->assertEquals($expected, $case);
+    }
+
+    //FAILURE: return 'error!' if string exceeds max input
+    public function test_f_checkInputString_r_str()
+    {
+        $expected = 'error!';
+        $input = 'duqshoqymjfjfkrlylqszzodwlxofvomqprnmdzwgctjozebdzjnrfzydextpoacomhympgfalkrzvmdvnggdwtbcanyqryyqkmiwsihdblycqsfwtptmdmbggsqgbjaowbqvuqiwevjfvcgppirgliqvfrbimlaaiinqjrxzwifzdahellrnxuujlpsvifxlocbgfyafcbjnthxpnalexdwemcsijkiddllkvzcnblbqeknbjtdimukhtlopvpyystwcscgq';
+        $case = checkInputString($input);
+        $this->assertEquals($expected, $case);
+    }
+
+    //MALFORMED:
+    public function test_m_checkInputString_r_typeError()
+    {
+        $this->expectException(TypeError::class);
+        $input1 = ['test'];
+        $case = checkInputString($input1);
+    }
+
+
+    //// ----- checkInputNumYear -----////
+
+    //SUCCESS: return the input if between 1900 - 2020
+    public function test_s_checkInputNumYear_r_str()
+    {
+        $expected = 2012;
+        $input = '2012';
+        $case = checkInputNumYear($input);
+        $this->assertEquals($expected, $case);
+    }
+
+    //FAILURE: return 'error!' if year falls outside of 1900 - 2020
+    public function test_f_checkInputNumYear_r_str()
+    {
+        $expected = 'error!';
+        $input = 1899;
+        $case = checkInputNumYear($input);
+        $this->assertEquals($expected, $case);
+    }
+
+    //MALFORMED: return typeError if incorrect
+    public function test_m_checkInputNumYear_r_typeError()
+    {
+        $this->expectException(TypeError::class);
+        $input1 = ['test'];
+        $case = checkInputNumYear($input1);
+    }
+
+
+    //// ----- checkInputNumAbv -----////
+
+    //SUCCESS: return the input if between 0 - 100
+    public function test_s_checkInputNumAbv_r_str()
+    {
+        $expected = 3;
+        $input = '3';
+        $case = checkInputNumAbv($input);
+        $this->assertEquals($expected, $case);
+    }
+
+    //FAILURE: return 'error!' if year falls outside of 1900 - 2020
+    public function test_f_checkInputNumAbv_r_str()
+    {
+        $expected = 'error!';
+        $input = 101;
+        $case = checkInputNumAbv($input);
+        $this->assertEquals($expected, $case);
+    }
+
+    //MALFORMED:
+    public function test_m_checkInputNumAbv_r_typeError()
+    {
+        $this->expectException(TypeError::class);
+        $input1 = ['test'];
+        $case = checkInputNumAbv($input1);
+    }
+    
 }
