@@ -72,12 +72,12 @@ function displayWines(array $wines): string {
 
 }
 
-/** Check the string inputed is greater than 0 and less than 250
+/** Check the string input is greater than 0 and less than 250
  *
  * @param string $input, input from PDO $_POST element
  * @return string, return the input if passed, throw error if not
  */
-function checkInputString(string $input): string {
+function checkInputString($input) {
     if (strlen($input) > 0 && strlen($input) < 250) {
         return $input;
     } else {
@@ -90,7 +90,7 @@ function checkInputString(string $input): string {
  * @param $input, taken from $_POST year
  * @return int, return number if true, throw error if not
  */
-function checkInputNumYear($input): int {
+function checkInputNumYear($input) {
     $input_num = is_numeric($input) ? $input * 1 : $input = 'error!';
     if ($input_num > 1900 && $input_num < 2020) {
         return $input_num;
@@ -104,7 +104,7 @@ function checkInputNumYear($input): int {
  * @param $input, taken from $_POST abv
  * @return int, return number int if true, throw error if not
  */
-function checkInputNumAbv($input): int {
+function checkInputNumAbv($input) {
     $input_num = is_numeric($input) ? $input * 1 : $input = 'error!';
     if ($input_num > 0 && $input_num < 100) {
         return $input_num;
@@ -124,3 +124,29 @@ function filterSpecialChar($input) {
     return $item_returned;
 }
 
+/** insert data into db
+ *
+ * @param $name
+ * @param $year
+ * @param $origin
+ * @param $profile
+ * @param $body
+ * @param $abv
+ * @param $cheese
+ * @param $link
+ * @param $db
+ * @return mixed
+ */
+function insertData($name, $year, $origin, $profile, $body, $abv, $cheese, $link, $db) {
+    $query = $db->prepare('INSERT INTO `wines`(`name`, `year`, `origin`, `profile`, `body`, `abv`, `cheese`, `link`) 
+VALUES (:name, :year, :origin, :profile, :body, :abv, :cheese, :link);');
+    $query->bindParam(':name', $name);
+    $query->bindParam(':year', $year);
+    $query->bindParam(':origin', $origin);
+    $query->bindParam(':profile', $profile);
+    $query->bindParam(':body', $body);
+    $query->bindParam(':abv', $abv);
+    $query->bindParam(':cheese', $cheese);
+    $query->bindParam(':link', $link);
+    return $query->execute();
+}
