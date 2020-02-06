@@ -2,7 +2,14 @@
 
 require_once 'functions.php';
 
-
+$wine_name = filterSpecialChar(checkInputString($_POST['wine-name']));
+$wine_year = filterSpecialChar(checkInputNumYear($_POST['wine-year']));
+$wine_origin = filterSpecialChar(checkInputString($_POST['wine-origin']));
+$wine_profile = filterSpecialChar(checkInputString($_POST['wine-profile']));
+$wine_body = filterSpecialChar(checkInputString($_POST['wine-body']));
+$wine_abv = filterSpecialChar(checkInputNumAbv($_POST['wine-abv']));
+$wine_cheese = filterSpecialChar(checkInputString($_POST['wine-cheese']));
+$wine_url = filterSpecialChar(checkInputString($_POST['wine-url']));
 
 ?>
 
@@ -28,7 +35,7 @@ require_once 'functions.php';
             <div class="form-container">
                 <div class="img"></div>
                 <h3>Add a wine to the collection</h3>
-                <form>
+                <form method="post">
                     <fieldset>
                         <input type="text" name="wine-name" placeholder="Wine Name" required/>
                     </fieldset>
@@ -45,7 +52,7 @@ require_once 'functions.php';
                         <input type="text" name="wine-body" placeholder="Body" required/>
                     </fieldset>
                     <fieldset>
-                        <input type="number" name="wine-abv" placeholder="ABV" min="0" max="99" required/>
+                        <input type="number" name="wine-abv" placeholder="ABV" min="1" max="99" required/>
                     </fieldset>
                     <fieldset>
                         <input type="text" name="wine-cheese" placeholder="Cheese Pairing" required/>
