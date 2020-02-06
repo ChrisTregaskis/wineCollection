@@ -174,3 +174,63 @@ a {
     opacity: 1;
     transition: opacity .6s;
 }
+
+/* ====== ADD PAGE/FORM ====== */
+
+.page-container {
+    margin: 0 auto;
+}
+
+.surround {
+    padding: 10px;
+}
+
+.form-container {
+    width: 70%;
+    height: auto;
+    background-color: #BFCB58;
+    margin: 0 auto;
+    opacity: .8;
+    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+    0 12.5px 10px rgba(0, 0, 0, 0.06),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+    0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+    0 100px 80px rgba(0, 0, 0, 0.12);
+}
+
+.form-container .img {
+    background-image: url(https://cdn.pixabay.com/photo/2018/07/20/14/02/grapes-3550733_960_720.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 120px;
+    width: 100%;
+}
+
+.form-container h3 {
+    text-align: center;
+}
+
+.form-container a {
+    border: 1px solid #EEF2F7;
+    border-radius: 10%;
+    letter-spacing: 0.1rem;
+    background-color: #EEF2F7;
+    opacity: .8;
+    margin: 0 auto;
+}
+
+fieldset {
+    border: none;
+    text-align: center;
+}
+
+fieldset input {
+    text-align: center;
+}
+
+.form-wine-collection-btn {
+    width: 150px;
+    margin: 30px auto;
+    padding-bottom: 30px;
+}
