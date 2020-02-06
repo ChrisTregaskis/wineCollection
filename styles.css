@@ -227,6 +227,11 @@ fieldset {
 
 fieldset input {
     text-align: center;
+    width: 60%;
+}
+
+fieldset .submit-btn {
+    width: 80px;
 }
 
 .form-wine-collection-btn {
