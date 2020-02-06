@@ -1,21 +1,24 @@
 <?php
 
-function getWines($db)
-{
+/** Take the database assoc array and select the data required
+ *
+ * @param $db, takes the database
+ * @return mixed, returns assoc array of required data
+ */
+function getWines($db) {
     $query = $db->prepare('SELECT `id`, `name`, `year`, `origin`, `profile`, `body`, `abv`, `cheese`, `link`, `img` FROM `wines`;');
     $query->execute();
     return $query->fetchAll();
 }
 
-/** FUNCTION make sure array keys exist
+/** Make sure array keys exist
+ *
  * @param array $wines, takes an associated array
  * @return bool|string, return true if all keys exist otherwise false.
  */
-function keysExist(array $wines) : bool
-{
+function keysExist(array $wines) : bool {
     $result = '';
-    foreach ($wines as $wine)
-    {
+    foreach ($wines as $wine)  {
         if (array_key_exists('name', $wine) &&
             (array_key_exists('year', $wine)) &&
             (array_key_exists('origin', $wine)) &&
@@ -28,18 +31,18 @@ function keysExist(array $wines) : bool
         {
             $result = true;
         } else {
-            $result = false;
+            return false;
         }
     }
     return $result;
 }
 
-/** FUNCTION to display each wine
+/** Display each wine from assoc array
+ *
  * @param array $wines, takes an associated array
  * @return string, returns the html code that gets echo'ed out
  */
-function displayWines(array $wines): string
-{
+function displayWines(array $wines): string {
     $result = '';
     foreach ($wines as $wine)
     {
