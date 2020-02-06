@@ -12,7 +12,7 @@ if(isset($_POST['submit'])) {
     $wine_body = filterSpecialChar(checkInputString($_POST['wine-body']));
     $wine_abv = filterSpecialChar(checkInputNumAbv($_POST['wine-abv']));
     $wine_cheese = filterSpecialChar(checkInputString($_POST['wine-cheese']));
-    $wine_link = filterSpecialChar(checkInputString($_POST['wine-link']));
+    $wine_link = verifiedLink(filterSpecialChar(checkInputString($_POST['wine-link'])));
 
     //create db connections
     $db = connectDB();
@@ -71,7 +71,7 @@ if(isset($_POST['submit'])) {
                         <input type="text" name="wine-cheese" placeholder="Cheese Pairing" required/>
                     </fieldset>
                     <fieldset>
-                        <input type="text" name="wine-link" placeholder="url to buy" required/>
+                        <input type="text" name="wine-link" placeholder="url to buy"/>
                     </fieldset>
                     <fieldset>
                         <input class="submit-btn" type="submit" name="submit">
