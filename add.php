@@ -54,7 +54,7 @@ require_once 'functions.php';
                         <label></label><input type="text" name="wine-name" placeholder="url to buy"/>
                     </fieldset>
                     <fieldset>
-                        <input type="submit">
+                        <input class="submit-btn" type="submit">
                     </fieldset>
                 </form>
                 <div class="form-wine-collection-btn">
