@@ -14,11 +14,10 @@ nav {
     width: 100%;
     overflow: auto;
     background-color: #f7f9fb;
-    position: fixed;
+    /*position: fixed;*/
     background-image: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.7)),url("Resources/imgs/grapes-863703_1920.jpg");
     background-size: cover;
     background-position: center;
-    padding-bottom: 20px;
 }
 
 .navTop {
@@ -61,7 +60,6 @@ section {
     max-width: 1100px;
     margin: 0 auto;
     overflow: visible;
-    margin-top: 120px;
 
 }
 
@@ -132,4 +130,46 @@ a {
     padding: 2px;
     border-bottom: 1.4px solid #000;
     letter-spacing: 0.4rem;
+}
+
+
+/* ====== ADD WINE BTN ====== */
+
+.add-wine-btn-container {
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.7)), url(https://cdn.pixabay.com/photo/2018/07/20/14/02/grapes-3550733_960_720.jpg);
+    opacity: 0.7;
+    background-position: center;
+    background-size: cover;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    height: 100px;
+    width: 100px;
+    border-top-left-radius: 100%;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    transition: opacity .6s;
+}
+
+.add-wine-btn-box-placement {
+    position: fixed;
+    height: 65px;
+    width: 80px;
+    bottom: 0;
+    margin-left: 10px;
+}
+
+.add-wine-btn-container a {
+    display: block;
+    color: #fff;
+    text-align: right;
+    text-decoration: none;
+    font-size: 25px;
+    margin: 0 auto;
+}
+
+.add-wine-btn-container:hover {
+    opacity: 1;
+    transition: opacity .6s;
 }
