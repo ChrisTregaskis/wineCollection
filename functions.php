@@ -11,6 +11,12 @@ function getWines($db) {
     return $query->fetchAll();
 }
 
+function var_dump_pre($a) {
+    echo '<pre>';
+    var_dump($a);
+    echo '</pre>';
+}
+
 /** Make sure array keys exist
  *
  * @param array $wines, takes an associated array
@@ -64,5 +70,57 @@ function displayWines(array $wines): string {
     }
     return $result;
 
+}
+
+/** Check the string inputed is greater than 0 and less than 250
+ *
+ * @param string $input, input from PDO $_POST element
+ * @return string, return the input if passed, throw error if not
+ */
+function checkInputString(string $input): string {
+    if (strlen($input) > 0 && strlen($input) < 250) {
+        return $input;
+    } else {
+        return 'error!';
+    }
+}
+
+/** Check the number input is between 1900 & 2020, number, transform to int
+ *
+ * @param $input, taken from $_POST year
+ * @return int, return number if true, throw error if not
+ */
+function checkInputNumYear($input): int {
+    $input_num = is_numeric($input) ? $input * 1 : $input = 'error!';
+    if ($input_num > 1900 && $input_num < 2020) {
+        return $input_num;
+    } else {
+        return 'error!';
+    }
+}
+
+/** Check the number input is between 0 and 100 as its abv %
+ *
+ * @param $input, taken from $_POST abv
+ * @return int, return number int if true, throw error if not
+ */
+function checkInputNumAbv($input): int {
+    $input_num = is_numeric($input) ? $input * 1 : $input = 'error!';
+    if ($input_num > 0 && $input_num < 100) {
+        return $input_num;
+    } else {
+        return 'error!';
+    }
+}
+
+/** function to trim and sanitize
+ *
+ * @param $input
+ * @return mixed|string
+ */
+function filterSpecialChar($input) {
+    $item_returned = filter_var($input, FILTER_SANITIZE_SPECIAL_CHARS);
+    $item_returned = trim($input);
+    return $item_returned;
 }
 
