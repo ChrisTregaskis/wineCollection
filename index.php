@@ -40,7 +40,7 @@ if (keysExist($wines) == true) {
     </nav>
     <div class="add-wine-btn-container">
         <div class="add-wine-btn-box-placement">
-            <a href="#" class="active">Add Wine</a>
+            <a href="add.php" class="active">Add Wine</a>
         </div>
     </div>
         <section class="collection">
