@@ -153,18 +153,19 @@ a {
 }
 
 .add-wine-btn-box-placement {
-    position: fixed;
-    height: 65px;
-    width: 80px;
-    bottom: 0;
-    margin-left: 10px;
-}
+     position: fixed;
+     height: 65px;
+     width: 80px;
+     bottom: 0;
+     margin-left: 22px;
+ }
 
 .add-wine-btn-container a {
     display: block;
     color: #fff;
     text-align: right;
     text-decoration: none;
+    border: none;
     font-size: 25px;
     margin: 0 auto;
 }
