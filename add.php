@@ -30,31 +30,31 @@ require_once 'functions.php';
                 <h3>Add a wine to the collection</h3>
                 <form>
                     <fieldset>
-                        <label></label><input type="text" name="wine-name" placeholder="Wine Name"/>
+                        <input type="text" name="wine-name" placeholder="Wine Name" required/>
                     </fieldset>
                     <fieldset>
-                        <label></label><input type="date" name="wine-name"/>
+                        <input type="number" name="wine-year" placeholder="Year" min="1900" max="2020" required/>
                     </fieldset>
                     <fieldset>
-                        <label></label><input type="text" name="wine-name" placeholder="Origin"/>
+                        <input type="text" name="wine-origin" placeholder="Origin" required/>
                     </fieldset>
                     <fieldset>
-                        <label></label><input type="text" name="wine-name" placeholder="Profile"/>
+                        <input type="text" name="wine-profile" placeholder="Profile" required/>
                     </fieldset>
                     <fieldset>
-                        <label></label><input type="text" name="wine-name" placeholder="Body"/>
+                        <input type="text" name="wine-body" placeholder="Body" required/>
                     </fieldset>
                     <fieldset>
-                        <label></label><input type="number" name="wine-name" placeholder="ABV"/>
+                        <input type="number" name="wine-abv" placeholder="ABV" min="0" max="99" required/>
                     </fieldset>
                     <fieldset>
-                        <label></label><input type="text" name="wine-name" placeholder="Cheese Pairing"/>
+                        <input type="text" name="wine-cheese" placeholder="Cheese Pairing" required/>
                     </fieldset>
                     <fieldset>
-                        <label></label><input type="text" name="wine-name" placeholder="url to buy"/>
+                        <input type="text" name="wine-url" placeholder="url to buy" required/>
                     </fieldset>
                     <fieldset>
-                        <input class="submit-btn" type="submit">
+                        <input class="submit-btn" type="submit" name="submit">
                     </fieldset>
                 </form>
                 <div class="form-wine-collection-btn">
