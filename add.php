@@ -24,8 +24,6 @@ if(isset($_POST['submit'])) {
     header('Location: index.php');
 }
 
-//var_dump_pre($_POST['submit-btn']);
-
 ?>
 
 <!DOCTYPE html>
