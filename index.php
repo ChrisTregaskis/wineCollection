@@ -38,7 +38,12 @@ if (keysExist($wines) == true) {
             </div>
         </div>
     </nav>
-    <section class="collection">
+    <div class="add-wine-btn-container">
+        <div class="add-wine-btn-box-placement">
+            <a href="add.php" class="active">Add Wine</a>
+        </div>
+    </div>
+        <section class="collection">
         <div class="container">
             <div class="surround">
                 <?php echo $displayWines; ?>
