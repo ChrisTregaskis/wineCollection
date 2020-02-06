@@ -154,12 +154,42 @@ class Stacktests extends TestCase
         $this->assertEquals($expected, $case);
     }
 
-    //MALFORMED:
+    //MALFORMED: return typeError
     public function test_m_checkInputNumAbv_r_typeError()
     {
         $this->expectException(TypeError::class);
         $input1 = ['test'];
         $case = checkInputNumAbv($input1);
     }
-    
+
+
+    //// ----- verifiedLink -----////
+
+    //SUCCESS: throw url if url valid
+    public function test_s_verifiedLink_r_str()
+    {
+        $expected = 'https://www.google.co.uk/';
+        $input = 'https://www.google.co.uk/';
+        $case = verifiedLink($input);
+        $this->assertEquals($expected, $case);
+    }
+
+    //FAILURE:
+    public function test_f_verifiedLink_r_str()
+    {
+        $expected = 'https://www.novelwines.co.uk/';
+        $input = 101;
+        $case = verifiedLink($input);
+        $this->assertEquals($expected, $case);
+    }
+
+    //MALFORMED:
+    public function test_m_verifiedLink_r_typeError()
+    {
+        $this->expectException(TypeError::class);
+        $input1 = ['test'];
+        $case = verifiedLink($input1);
+    }
+
+
 }
