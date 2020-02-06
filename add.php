@@ -1,15 +1,30 @@
 <?php
 
-require_once 'functions.php';
+require 'connectDB.php';
+require 'functions.php';
 
-$wine_name = filterSpecialChar(checkInputString($_POST['wine-name']));
-$wine_year = filterSpecialChar(checkInputNumYear($_POST['wine-year']));
-$wine_origin = filterSpecialChar(checkInputString($_POST['wine-origin']));
-$wine_profile = filterSpecialChar(checkInputString($_POST['wine-profile']));
-$wine_body = filterSpecialChar(checkInputString($_POST['wine-body']));
-$wine_abv = filterSpecialChar(checkInputNumAbv($_POST['wine-abv']));
-$wine_cheese = filterSpecialChar(checkInputString($_POST['wine-cheese']));
-$wine_url = filterSpecialChar(checkInputString($_POST['wine-url']));
+//if submit pressed, call insert data function
+if(isset($_POST['submit'])) {
+    $wine_name = filterSpecialChar(checkInputString($_POST['wine-name']));
+    $wine_year = filterSpecialChar(checkInputNumYear($_POST['wine-year']));
+    $wine_origin = filterSpecialChar(checkInputString($_POST['wine-origin']));
+    $wine_profile = filterSpecialChar(checkInputString($_POST['wine-profile']));
+    $wine_body = filterSpecialChar(checkInputString($_POST['wine-body']));
+    $wine_abv = filterSpecialChar(checkInputNumAbv($_POST['wine-abv']));
+    $wine_cheese = filterSpecialChar(checkInputString($_POST['wine-cheese']));
+    $wine_link = filterSpecialChar(checkInputString($_POST['wine-link']));
+
+    //create db connections
+    $db = connectDB();
+
+    //call insertData function and pass inputs and pdo connection
+    insertData($wine_name, $wine_year, $wine_origin, $wine_profile,
+        $wine_body, $wine_abv, $wine_cheese, $wine_link, $db);
+
+    header('Location: index.php');
+}
+
+//var_dump_pre($_POST['submit-btn']);
 
 ?>
 
@@ -58,7 +73,7 @@ $wine_url = filterSpecialChar(checkInputString($_POST['wine-url']));
                         <input type="text" name="wine-cheese" placeholder="Cheese Pairing" required/>
                     </fieldset>
                     <fieldset>
-                        <input type="text" name="wine-url" placeholder="url to buy" required/>
+                        <input type="text" name="wine-link" placeholder="url to buy" required/>
                     </fieldset>
                     <fieldset>
                         <input class="submit-btn" type="submit" name="submit">
