@@ -115,5 +115,22 @@
         margin: 30px auto 40px auto;
     }
 
+    .add-wine-btn-container {
+        height: 80px;
+        width: 80px;
+        border-top-left-radius: 100%;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+
+    .add-wine-btn-box-placement {
+        margin-left: 5px;
+        height: 55px;
+    }
+
+    .add-wine-btn-container a {
+        font-size: 20px;
+    }
 
 }
