@@ -119,8 +119,7 @@ function checkInputNumAbv(string $input): string {
  * @return mixed|string
  */
 function filterSpecialChar($input) {
-    $item_returned = filter_var($input, FILTER_SANITIZE_SPECIAL_CHARS);
-    $item_returned .= trim($input);
+    $item_returned = trim(filter_var($input, FILTER_SANITIZE_SPECIAL_CHARS));
     return $item_returned;
 }
 
@@ -138,13 +137,13 @@ function verifiedLink(string $input): string {
     }
 }
 
-function validateStringAlphanumeric($string) {
-    if (!(strlen($string) > 0 && strlen($string) <200)) {
-        return 'error!';
-    } else {
-        return $string;
-    }
-}
+//function validateStringAlphanumeric($string) {
+//    if (preg_match('/[a-zA-Z0-9]/', $string)) {
+//        return $string;
+//    } else {
+//        return 'error!';
+//    }
+//}
 
 
 
