@@ -78,7 +78,7 @@ function displayWines(array $wines): string {
  * @return string, return the input if passed, throw error if not
  */
 function checkInputString(string $input): string {
-    if (strlen($input) > 0 && strlen($input) < 250) {
+    if (strlen($input) > 0 && strlen($input) < 100) {
         return $input;
     } else {
         return 'error!';
@@ -120,7 +120,7 @@ function checkInputNumAbv(string $input): string {
  */
 function filterSpecialChar($input) {
     $item_returned = filter_var($input, FILTER_SANITIZE_SPECIAL_CHARS);
-    $item_returned = trim($input);
+    $item_returned .= trim($input);
     return $item_returned;
 }
 
@@ -134,9 +134,19 @@ function verifiedLink(string $input): string {
     if (filter_var($input, FILTER_VALIDATE_URL)) {
         return $input;
     } else {
-        return 'https://www.novelwines.co.uk/';
+        return 'https://www.novelwines.co.uk';
     }
 }
+
+function validateStringAlphanumeric($string) {
+    if (!(strlen($string) > 0 && strlen($string) <200)) {
+        return 'error!';
+    } else {
+        return $string;
+    }
+}
+
+
 
 /** insert data into db
  *
