@@ -49,33 +49,15 @@ if(isset($_POST['submit'])) {
                 <div class="img"></div>
                 <h3>Add a wine to the collection</h3>
                 <form method="post">
-                    <fieldset>
-                        <input type="text" name="wine-name" placeholder="Wine Name" required/>
-                    </fieldset>
-                    <fieldset>
-                        <input type="number" name="wine-year" placeholder="Year" min="1900" max="2020" required/>
-                    </fieldset>
-                    <fieldset>
-                        <input type="text" name="wine-origin" placeholder="Origin" required/>
-                    </fieldset>
-                    <fieldset>
-                        <input type="text" name="wine-profile" placeholder="Profile" required/>
-                    </fieldset>
-                    <fieldset>
-                        <input type="text" name="wine-body" placeholder="Body" required/>
-                    </fieldset>
-                    <fieldset>
-                        <input type="number" name="wine-abv" placeholder="ABV" min="1" max="99" required/>
-                    </fieldset>
-                    <fieldset>
-                        <input type="text" name="wine-cheese" placeholder="Cheese Pairing" required/>
-                    </fieldset>
-                    <fieldset>
-                        <input type="text" name="wine-link" placeholder="url to buy"/>
-                    </fieldset>
-                    <fieldset>
-                        <input class="submit-btn" type="submit" name="submit">
-                    </fieldset>
+                    <fieldset><input type="text" name="wine-name" placeholder="Wine Name" required/></fieldset>
+                    <fieldset><input type="number" name="wine-year" placeholder="Year" min="1900" max="2020" required/></fieldset>
+                    <fieldset><input type="text" name="wine-origin" placeholder="Origin" required/></fieldset>
+                    <fieldset><input type="text" name="wine-profile" placeholder="Profile" required/></fieldset>
+                    <fieldset><input type="text" name="wine-body" placeholder="Body" required/></fieldset>
+                    <fieldset><input type="number" name="wine-abv" placeholder="ABV" min="1" max="99" required/></fieldset>
+                    <fieldset><input type="text" name="wine-cheese" placeholder="Cheese Pairing" required/></fieldset>
+                    <fieldset><input type="text" name="wine-link" placeholder="url to buy"/></fieldset>
+                    <fieldset><input class="submit-btn" type="submit" name="submit"></fieldset>
                 </form>
                 <div class="form-wine-collection-btn">
                     <a href="index.php" class="back-to-wine-collection">Wine Collection</a>
