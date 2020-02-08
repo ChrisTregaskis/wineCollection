@@ -24,8 +24,11 @@ if(isset($_POST['submit'])) {
 
     //valid name
     if (checkInputString($wine_name) == 'error!') {
-        $error_message .= 'Invalid wine name <br>';
+        $error_message .= 'Invalid wine name length <br>';
+    } elseif (validateStringAlphanumeric($wine_name) == 'error!') {
+        $error_message .= 'Please use only letters and numbers for wine name <br>';
     }
+
     //valid year
     if (checkInputNumYear($wine_year) == 'error!') {
         $error_message .= 'Invalid wine year <br>';
@@ -34,16 +37,22 @@ if(isset($_POST['submit'])) {
     //valid origin
     if (checkInputString($wine_origin) == 'error!') {
         $error_message .= 'Invalid origin of wine <br>';
+    } elseif (validateStringAlphanumeric($wine_origin) == 'error!') {
+        $error_message .= 'Please use only letters and numbers for wine origin <br>';
     }
 
     //valid profile
     if (checkInputString($wine_profile) == 'error!') {
         $error_message .= 'Invalid wine profile <br>';
+    } elseif (validateStringAlphanumeric($wine_profile) == 'error!') {
+        $error_message .= 'Please use only letters and numbers for wine profile <br>';
     }
 
     //valid body
     if (checkInputString($wine_body) == 'error!') {
         $error_message .= 'Invalid wine body type <br>';
+    } elseif (validateStringAlphanumeric($wine_body) == 'error!') {
+        $error_message .= 'Please only use letters and numbers for wine body <br>';
     }
 
     //valid abv
@@ -54,6 +63,8 @@ if(isset($_POST['submit'])) {
     //valid cheese
     if (checkInputString($wine_cheese) == 'error!') {
         $error_message .= 'Invalid cheese type <br>';
+    } elseif (validateStringAlphanumeric($wine_cheese) == 'error!') {
+        $error_message .= 'Please only use letters and numbers for cheers pairing <br>';
     }
 
     if ($error_message != '') {
