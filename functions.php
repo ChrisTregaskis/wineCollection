@@ -137,14 +137,13 @@ function verifiedLink(string $input): string {
     }
 }
 
-//function validateStringAlphanumeric($string) {
-//    if (preg_match('/[a-zA-Z0-9]/', $string)) {
-//        return $string;
-//    } else {
-//        return 'error!';
-//    }
-//}
-
+function validateStringAlphanumeric($string) {
+    if (preg_match('/^[a-zA-Z0-9]$/', $string)) {
+        return $string;
+    } else {
+        return 'error!';
+    }
+}
 
 
 /** insert data into db
