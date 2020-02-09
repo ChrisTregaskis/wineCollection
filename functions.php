@@ -143,7 +143,7 @@ function verifiedLink(string $input): string {
  * @param $string, takes the input of type="text"
  * @return string, returns if true and 'error!' if false
  */
-function validateStringAlphanumeric($string) {
+function validateStringAlphanumeric(string $string): string {
     if (preg_match('/^\w/', $string) && preg_match('/\w$/', $string)) {
         return $string;
     } else {

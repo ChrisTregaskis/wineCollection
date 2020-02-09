@@ -203,9 +203,29 @@ class Stacktests extends TestCase
         $this->assertEquals($expected, $case);
     }
 
-    //FAILURE:
+    //FAILURE: Testing returning error if non alphanumeric entered at the beginning
+    public function test_f_validateStringAlphanumeric_r_err_str1()
+    {
+        $expected = 'error!';
+        $input = '@!£test';
+        $case = validateStringAlphanumeric($input);
+        $this->assertEquals($expected, $case);
+    }
 
+    //FAILURE: Testing error returning if non alphanumeric entered at end
+    public function test_f_validateStringAlphanumeric_r_err_str2()
+    {
+        $expected = 'error!';
+        $input = '@!£test';
+        $case = validateStringAlphanumeric($input);
+        $this->assertEquals($expected, $case);
+    }
 
     //MALFORMED:
-
+    public function test_m_validateStringAlphanumeric_r_typeError()
+    {
+        $this->expectException(TypeError::class);
+        $input1 = ['test'];
+        $case = validateStringAlphanumeric($input1);
+    }
 }
