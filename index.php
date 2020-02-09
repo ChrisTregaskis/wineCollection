@@ -32,7 +32,7 @@ if (keysExist($wines) == true) {
 <body>
     <nav>
         <div class="navTop">
-            <div class="logo"><a href="#"></a> </div>
+            <div class="logo"></div>
             <div class="title">
                 <h1>The Wine Collection.</h1>
             </div>
