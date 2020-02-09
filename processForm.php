@@ -52,7 +52,7 @@ if(isset($_POST['submit'])) {
     if (checkInputString($wine_body) == 'error!') {
         $error_message .= 'Invalid wine body type <br>';
     } elseif (validateStringAlphanumeric($wine_body) == 'error!') {
-        $error_message .= 'Please only use letters and numbers for wine body <br>';
+        $error_message .= 'Please use only letters and numbers for wine body <br>';
     }
 
     //valid abv
@@ -64,7 +64,7 @@ if(isset($_POST['submit'])) {
     if (checkInputString($wine_cheese) == 'error!') {
         $error_message .= 'Invalid cheese type <br>';
     } elseif (validateStringAlphanumeric($wine_cheese) == 'error!') {
-        $error_message .= 'Please only use letters and numbers for cheers pairing <br>';
+        $error_message .= 'Please use only letters and numbers for cheers pairing <br>';
     }
 
     if ($error_message != '') {
