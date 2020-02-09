@@ -137,8 +137,14 @@ function verifiedLink(string $input): string {
     }
 }
 
+/** validate input to make sure only alpha-numeric
+ *  ^ means start with, \w means all alphanumeric and $ means ends with 0 or more times
+ *
+ * @param $string, takes the input of type="text"
+ * @return string, returns if true and 'error!' if false
+ */
 function validateStringAlphanumeric($string) {
-    if (preg_match('/^[a-zA-Z0-9]$/', $string)) {
+    if (preg_match('/^\w/', $string) && preg_match('/\w$/', $string)) {
         return $string;
     } else {
         return 'error!';
