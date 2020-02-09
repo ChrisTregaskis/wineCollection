@@ -177,7 +177,7 @@ class Stacktests extends TestCase
     //FAILURE:
     public function test_f_verifiedLink_r_str()
     {
-        $expected = 'https://www.novelwines.co.uk/';
+        $expected = 'https://www.novelwines.co.uk';
         $input = 101;
         $case = verifiedLink($input);
         $this->assertEquals($expected, $case);
@@ -191,5 +191,21 @@ class Stacktests extends TestCase
         $case = verifiedLink($input1);
     }
 
+
+    //// ----- validateStringAlphanumeric -----////
+
+    //SUCCESS:
+    public function test_s_validateStringAlphanumeric_r_str()
+    {
+        $expected = 'test';
+        $input = 'test';
+        $case = validateStringAlphanumeric($input);
+        $this->assertEquals($expected, $case);
+    }
+
+    //FAILURE:
+
+
+    //MALFORMED:
 
 }
