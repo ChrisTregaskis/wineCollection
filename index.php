@@ -32,21 +32,31 @@ if (keysExist($wines) == true) {
 <body>
     <nav>
         <div class="navTop">
-            <div class="logo"><a href="#"></a> </div>
+            <div class="logo"></div>
             <div class="title">
                 <h1>The Wine Collection.</h1>
             </div>
         </div>
     </nav>
-    <section class="collection">
+    <div class="add-wine-btn-container">
+        <div class="add-wine-btn-box-placement">
+            <a href="add.php" class="active">Add Wine</a>
+        </div>
+    </div>
+        <section class="collection">
         <div class="container">
             <div class="surround">
                 <?php echo $displayWines; ?>
             </div>
         </div>
     </section>
+    <section>
+
+    </section>
 
 </body>
 
 </html>
+
+
 
