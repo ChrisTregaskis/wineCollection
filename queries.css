@@ -35,13 +35,14 @@
         height: 80px;
     }
 
-}
-
-@media screen and (max-width: 665px) {
-    .container {
-        margin-top: 190px;
+    .form-container {
+        width: 85%;
     }
 
+}
+
+@media screen and (max-width: 665px)
+{
     .logo {
         margin: 0 auto;
         display: block;
@@ -57,13 +58,26 @@
     .content {
         margin-left: 30px;
     }
+
+    .page-container {
+        width: 100%;
+    }
+
+    .form-container {
+        width: 100%;
+    }
+
+    .surround {
+        padding: 0;
+    }
+
+    fieldset input {
+        width: 90%;
+    }
 }
 
 @media screen and (max-width: 580px)
 {
-    .container {
-        margin-top: 150px;
-    }
     article {
         width: 100%;
         margin: 40px auto;
@@ -72,10 +86,6 @@
 
 @media screen and (max-width: 530px)
 {
-    .container {
-        margin-top: 150px;
-    }
-
     .logo {
         width: 60px;
         height: 60px;
@@ -92,10 +102,6 @@
 
 @media screen and (max-width: 500px)
 {
-    .container {
-        margin-top: 160px;
-    }
-
     article {
         width: 230px;
         height: auto;
@@ -129,5 +135,22 @@
         margin: 30px auto 40px auto;
     }
 
+    .add-wine-btn-container {
+        height: 80px;
+        width: 80px;
+        border-top-left-radius: 100%;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+
+    .add-wine-btn-box-placement {
+        margin-left: -3px;
+        height: 55px;
+    }
+
+    .add-wine-btn-container a {
+        font-size: 20px;
+    }
 
 }
