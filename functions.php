@@ -65,7 +65,6 @@ function displayWines(array $wines): string {
         $result .= '<li><span>Cheese: </span>' . $wine['cheese'] . '</li>';
         $result .= '</ul>';
         $result .= '<div class=\'view-more-link\'><a href=\'' . $wine['link'] . '\'>View More</a></div>';
-        $result .= '<div class=\'delete-wine-btn\'><a href=\'#\'' . '>Delete Wine</a></div>';
         $result .= '</div>';
         $result .= '</article>';
     }
