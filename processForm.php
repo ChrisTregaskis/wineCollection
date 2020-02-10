@@ -19,6 +19,7 @@ if(isset($_POST['submit'])) {
     $wine_abv = ($_POST['wine-abv']);
     $wine_cheese = filterSpecialChar($_POST['wine-cheese']);
     $wine_link = verifiedLink(filterSpecialChar($_POST['wine-link']));
+    $wine_hidden = 0;
 
     $error_message = '';
 
@@ -80,7 +81,7 @@ if(isset($_POST['submit'])) {
 
     //call insertData function and pass inputs and pdo connection
     insertData($wine_name, $wine_year, $wine_origin, $wine_profile,
-        $wine_body, $wine_abv, $wine_cheese, $wine_link, $db);
+        $wine_body, $wine_abv, $wine_cheese, $wine_link, $wine_hidden, $db);
 
     header('Location: index.php');
 

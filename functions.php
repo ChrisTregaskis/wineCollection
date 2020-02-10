@@ -65,6 +65,7 @@ function displayWines(array $wines): string {
         $result .= '<li><span>Cheese: </span>' . $wine['cheese'] . '</li>';
         $result .= '</ul>';
         $result .= '<div class=\'view-more-link\'><a href=\'' . $wine['link'] . '\'>View More</a></div>';
+        $result .= '<div class=\'delete-wine-btn\'><a href=\'#\'' . '>Delete Wine</a></div>';
         $result .= '</div>';
         $result .= '</article>';
     }
@@ -165,9 +166,9 @@ function validateStringAlphanumeric(string $string): string {
  * @param $db
  * @return mixed
  */
-function insertData($name, $year, $origin, $profile, $body, $abv, $cheese, $link, $db) {
-    $query = $db->prepare('INSERT INTO `wines`(`name`, `year`, `origin`, `profile`, `body`, `abv`, `cheese`, `link`) 
-VALUES (:name, :year, :origin, :profile, :body, :abv, :cheese, :link);');
+function insertData($name, $year, $origin, $profile, $body, $abv, $cheese, $link, $hidden, $db) {
+    $query = $db->prepare('INSERT INTO `wines`(`name`, `year`, `origin`, `profile`, `body`, `abv`, `cheese`, `link`, `hidden`) 
+VALUES (:name, :year, :origin, :profile, :body, :abv, :cheese, :link, :hidden);');
     $query->bindParam(':name', $name);
     $query->bindParam(':year', $year);
     $query->bindParam(':origin', $origin);
@@ -176,5 +177,6 @@ VALUES (:name, :year, :origin, :profile, :body, :abv, :cheese, :link);');
     $query->bindParam(':abv', $abv);
     $query->bindParam(':cheese', $cheese);
     $query->bindParam(':link', $link);
+    $query->bindParam(':hidden', $hidden);
     return $query->execute();
 }
