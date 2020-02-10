@@ -131,7 +131,8 @@ li span {
     width: 230px;
 }
 
-.content a {
+.content a,
+.content input {
     text-decoration: none;
     color: #000;
     padding: 2px;
@@ -140,7 +141,8 @@ li span {
     letter-spacing: 0.1rem;
 }
 
-.content a:hover {
+.content a:hover,
+.content input:hover {
     color: #EEF2F7;
     border-color: #EEF2F7;
     background-color: #000;
@@ -150,7 +152,8 @@ li span {
     transition: color 0.4s;
 }
 
-.content a {
+.content a,
+.content input {
     transition: opacity 0.7s;
     transition: background-color 0.7s;
     transition: color 0.7s;
@@ -158,6 +161,8 @@ li span {
 
 .delete-wine-btn {
     margin: 18px 0;
+    background-color: #EEF2F7;
+    cursor: pointer;
 }
 
 
