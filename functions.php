@@ -11,6 +11,12 @@ function getWines($db) {
     return $query->fetchAll();
 }
 
+function var_dump_pre($a) {
+    echo '<pre>';
+    var_dump($a);
+    echo '</pre>';
+}
+
 /** Make sure array keys exist
  *
  * @param array $wines, takes an associated array
@@ -66,3 +72,109 @@ function displayWines(array $wines): string {
 
 }
 
+/** Check the string input is greater than 0 and less than 250
+ *
+ * @param string $input, input from PDO $_POST element
+ * @return string, return the input if passed, throw error if not
+ */
+function checkInputString(string $input): string {
+    if (strlen($input) > 0 && strlen($input) < 100) {
+        return $input;
+    } else {
+        return 'error!';
+    }
+}
+
+/** Check the number input is between 1900 & 2020, number, transform to int
+ *
+ * @param $input, taken from $_POST year
+ * @return int, return number if true, throw error if not
+ */
+function checkInputNumYear(string $input): string {
+    $input_num = is_numeric($input) ? $input * 1 : $input = 'error!';
+    if ($input_num > 1900 && $input_num < 2020) {
+        return $input_num;
+    } else {
+        return 'error!';
+    }
+}
+
+/** Check the number input is between 0 and 100 as its abv %
+ *
+ * @param $input, taken from $_POST abv
+ * @return int, return number int if true, throw error if not
+ */
+function checkInputNumAbv(string $input): string {
+    $input_num = is_numeric($input) ? $input * 1 : $input = 'error!';
+    if ($input_num > 0 && $input_num < 100) {
+        return $input_num;
+    } else {
+        return 'error!';
+    }
+}
+
+/** function to trim and sanitize
+ *
+ * @param $input
+ * @return mixed|string
+ */
+function filterSpecialChar($input) {
+    $item_returned = trim(filter_var($input, FILTER_SANITIZE_SPECIAL_CHARS));
+    return $item_returned;
+}
+
+/** verify if link is valid url
+ *
+ * @param $input, link input
+ * @return string, default link if not valid or link if valid
+ */
+function verifiedLink(string $input): string {
+    filter_var($input, FILTER_SANITIZE_URL);
+    if (filter_var($input, FILTER_VALIDATE_URL)) {
+        return $input;
+    } else {
+        return 'https://www.novelwines.co.uk';
+    }
+}
+
+/** validate input to make sure only alpha-numeric
+ *  ^ means start with, \w means all alphanumeric and $ means ends with 0 or more times
+ *
+ * @param $string, takes the input of type="text"
+ * @return string, returns if true and 'error!' if false
+ */
+function validateStringAlphanumeric(string $string): string {
+    if (preg_match('/^\w/', $string) && preg_match('/\w$/', $string)) {
+        return $string;
+    } else {
+        return 'error!';
+    }
+}
+
+
+/** insert data into db
+ *
+ * @param $name
+ * @param $year
+ * @param $origin
+ * @param $profile
+ * @param $body
+ * @param $abv
+ * @param $cheese
+ * @param $link
+ * @param $db
+ * @return mixed
+ */
+function insertData($name, $year, $origin, $profile, $body, $abv, $cheese, $link, $db) {
+    $query = $db->prepare('INSERT INTO `wines`(`name`, `year`, `origin`, `profile`, `body`, `abv`, `cheese`, `link`) 
+VALUES (:name, :year, :origin, :profile, :body, :abv, :cheese, :link);');
+    $query->bindParam(':name', $name);
+    $query->bindParam(':year', $year);
+    $query->bindParam(':origin', $origin);
+    $query->bindParam(':profile', $profile);
+    $query->bindParam(':body', $body);
+    $query->bindParam(':abv', $abv);
+    $query->bindParam(':cheese', $cheese);
+    $query->bindParam(':link', $link);
+    return $query->execute();
+}
