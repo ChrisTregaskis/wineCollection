@@ -183,3 +183,26 @@ VALUES (:name, :year, :origin, :profile, :body, :abv, :cheese, :link, :hidden);'
     $query->bindParam(':hidden', $hidden);
     return $query->execute();
 }
+
+
+function deleteWine($id, $db) {
+    $query = $db->prepare('UPDATE `wines` SET `hidden` = \'1\' WHERE `id` =' . $id . ';');
+    return $query->execut();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
