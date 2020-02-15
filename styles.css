@@ -82,6 +82,10 @@ article {
     margin: 30px 20px 50px 20px;
 }
 
+.hidden-hidden {
+    visibility: hidden;
+}
+
 .wine-img {
     height: 350px;
     width: 230px;
