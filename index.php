@@ -45,9 +45,18 @@ if (keysExist($wines) == true) {
             <a href="add.php" class="active">Add Wine</a>
         </div>
     </div>
+
         <section class="collection">
         <div class="container">
             <div class="surround">
+                <?php
+                if(isset($_SESSION['error_message_delete'])) {
+                    echo '<div class="error-message-delete-box">
+                        <div class="error-message-delete">' . $_SESSION['error_message_delete'] . '</div>
+                        </div> ';
+                    unset($_SESSION['error_message_delete']);
+                }
+                ?>
                 <?php echo $displayWines; ?>
 
             </div>
