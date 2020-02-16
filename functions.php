@@ -56,7 +56,7 @@ function displayWines(array $wines): string {
 
             $result .= '<article class=\'wine-item\'>';
             $result .= '<div class=\'hidden-hidden\'>' . $wine['hidden'] . '</div>';
-            $result .= '<div class=\'wine-id\'>' . $wine['id'] . '</div>';
+            $result .= '<div class=\'wine-id hidden-hidden\'>' . $wine['id'] . '</div>';
             $result .= '<div class=\'wine-img\' style=\'background-image: url(' . 'Resources/' . $wine['img'] . ')\'></div>';
             $result .= '<div class="content">';
             $result .= '<h3>' . $wine['name'] . '</h3>';
@@ -70,7 +70,7 @@ function displayWines(array $wines): string {
             $result .= '</ul>';
             $result .= '<div class=\'view-more-link\'><a href=\'' . $wine['link'] . '\'>View More</a></div>';
             $result .= '<form method="post">';
-            $result .= '<input type=\'hidden\' id=\'wine-id\' name=\'wine-id\' value=\'56\'>';
+            $result .= '<input type=\'hidden\' id=\'wine-id\' name=\'wine-id\' value=\'' . $wine['id'] . '\'>';
             $result .= '<input class=\'delete-wine-btn\' type=\'submit\' name=\'delete-wine\' value=\'Delete Wine\'>';
             $result .= '</form>';
             $result .= '</div>';
