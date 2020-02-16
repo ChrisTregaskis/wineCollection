@@ -2,6 +2,8 @@
 
 require_once 'functions.php';
 require_once 'connectDB.php';
+require_once 'deleteWine.php';
+
 
 $db = connectDB();
 $wines = getWines($db);
@@ -47,6 +49,7 @@ if (keysExist($wines) == true) {
         <div class="container">
             <div class="surround">
                 <?php echo $displayWines; ?>
+
             </div>
         </div>
     </section>
