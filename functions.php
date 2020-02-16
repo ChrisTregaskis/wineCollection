@@ -53,7 +53,10 @@ function displayWines(array $wines): string {
     foreach ($wines as $wine)
     {
         if ($wine['hidden'] == 0) {
+
             $result .= '<article class=\'wine-item\'>';
+            $result .= '<div class=\'hidden-hidden\'>' . $wine['hidden'] . '</div>';
+            $result .= '<div class=\'wine-id\'>' . $wine['id'] . '</div>';
             $result .= '<div class=\'wine-img\' style=\'background-image: url(' . 'Resources/' . $wine['img'] . ')\'></div>';
             $result .= '<div class="content">';
             $result .= '<h3>' . $wine['name'] . '</h3>';
@@ -66,9 +69,13 @@ function displayWines(array $wines): string {
             $result .= '<li><span>Cheese: </span>' . $wine['cheese'] . '</li>';
             $result .= '</ul>';
             $result .= '<div class=\'view-more-link\'><a href=\'' . $wine['link'] . '\'>View More</a></div>';
+            $result .= '<form method="post">';
+            $result .= '<input type=\'hidden\' id=\'wine-id\' name=\'wine-id\' value=\'56\'>';
             $result .= '<input class=\'delete-wine-btn\' type=\'submit\' name=\'delete-wine\' value=\'Delete Wine\'>';
+            $result .= '</form>';
             $result .= '</div>';
             $result .= '</article>';
+
         }
     }
     return $result;
@@ -186,8 +193,9 @@ VALUES (:name, :year, :origin, :profile, :body, :abv, :cheese, :link, :hidden);'
 
 
 function deleteWine($id, $db) {
-    $query = $db->prepare('UPDATE `wines` SET `hidden` = \'1\' WHERE `id` =' . $id . ';');
-    return $query->execut();
+    $query = $db->prepare('UPDATE `wines` SET `hidden` = \'1\' WHERE `id` = :id');
+    $query->bindParam(':id', $id);
+    return $query->execute();
 }
 
 
