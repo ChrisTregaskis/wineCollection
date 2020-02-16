@@ -6,7 +6,7 @@
  * @return mixed, returns assoc array of required data
  */
 function getWines($db) {
-    $query = $db->prepare('SELECT `id`, `name`, `year`, `origin`, `profile`, `body`, `abv`, `cheese`, `link`, `img` FROM `wines`;');
+    $query = $db->prepare('SELECT `id`, `name`, `year`, `origin`, `profile`, `body`, `abv`, `cheese`, `link`, `img`, `hidden` FROM `wines`;');
     $query->execute();
     return $query->fetchAll();
 }
@@ -43,7 +43,7 @@ function keysExist(array $wines) : bool {
     return $result;
 }
 
-/** Display each wine from assoc array
+/** Display each wine from assoc array if not set to hidden
  *
  * @param array $wines, takes an associated array
  * @return string, returns the html code that gets echo'ed out
@@ -52,25 +52,36 @@ function displayWines(array $wines): string {
     $result = '';
     foreach ($wines as $wine)
     {
-        $result .= '<article class=\'wine-item\'>';
-        $result .= '<div class=\'wine-img\' style=\'background-image: url(' . 'Resources/' . $wine['img'] . ')\'></div>';
-        $result .= '<div class="content">';
-        $result .= '<h3>' . $wine['name'] . '</h3>';
-        $result .= '<ul>';
-        $result .= '<li><span>Year: </span>' . $wine['year'] . '</li>';
-        $result .= '<li><span>Origin: </span>' . $wine['origin'] . '</li>';
-        $result .= '<li><span>Profile: </span>' . $wine['profile'] . '</li>';
-        $result .= '<li><span>Body: </span>' . $wine['body'] . '</li>';
-        $result .= '<li><span>ABV: </span>' . $wine['abv'] . '</li>';
-        $result .= '<li><span>Cheese: </span>' . $wine['cheese'] . '</li>';
-        $result .= '</ul>';
-        $result .= '<div class=\'view-more-link\'><a href=\'' . $wine['link'] . '\'>View More</a></div>';
-        $result .= '</div>';
-        $result .= '</article>';
+        if ($wine['hidden'] == 0) {
+
+            $result .= '<article class=\'wine-item\'>';
+            $result .= '<div class=\'hidden-hidden\'>' . $wine['hidden'] . '</div>';
+            $result .= '<div class=\'wine-id hidden-hidden\'>' . $wine['id'] . '</div>';
+            $result .= '<div class=\'wine-img\' style=\'background-image: url(' . 'Resources/' . $wine['img'] . ')\'></div>';
+            $result .= '<div class="content">';
+            $result .= '<h3>' . $wine['name'] . '</h3>';
+            $result .= '<ul>';
+            $result .= '<li><span>Year: </span>' . $wine['year'] . '</li>';
+            $result .= '<li><span>Origin: </span>' . $wine['origin'] . '</li>';
+            $result .= '<li><span>Profile: </span>' . $wine['profile'] . '</li>';
+            $result .= '<li><span>Body: </span>' . $wine['body'] . '</li>';
+            $result .= '<li><span>ABV: </span>' . $wine['abv'] . '</li>';
+            $result .= '<li><span>Cheese: </span>' . $wine['cheese'] . '</li>';
+            $result .= '</ul>';
+            $result .= '<div class=\'view-more-link\'><a href=\'' . $wine['link'] . '\'>View More</a></div>';
+            $result .= '<form method="post">';
+            $result .= '<input type=\'hidden\' id=\'wine-id\' name=\'wine-id\' value=\'' . $wine['id'] . '\'>';
+            $result .= '<input class=\'delete-wine-btn\' type=\'submit\' name=\'delete-wine\' value=\'Delete Wine\'>';
+            $result .= '</form>';
+            $result .= '</div>';
+            $result .= '</article>';
+
+        }
     }
     return $result;
-
 }
+
+
 
 /** Check the string input is greater than 0 and less than 250
  *
@@ -165,9 +176,9 @@ function validateStringAlphanumeric(string $string): string {
  * @param $db
  * @return mixed
  */
-function insertData($name, $year, $origin, $profile, $body, $abv, $cheese, $link, $db) {
-    $query = $db->prepare('INSERT INTO `wines`(`name`, `year`, `origin`, `profile`, `body`, `abv`, `cheese`, `link`) 
-VALUES (:name, :year, :origin, :profile, :body, :abv, :cheese, :link);');
+function insertData($name, $year, $origin, $profile, $body, $abv, $cheese, $link, $hidden, $db) {
+    $query = $db->prepare('INSERT INTO `wines`(`name`, `year`, `origin`, `profile`, `body`, `abv`, `cheese`, `link`, `hidden`) 
+VALUES (:name, :year, :origin, :profile, :body, :abv, :cheese, :link, :hidden);');
     $query->bindParam(':name', $name);
     $query->bindParam(':year', $year);
     $query->bindParam(':origin', $origin);
@@ -176,5 +187,30 @@ VALUES (:name, :year, :origin, :profile, :body, :abv, :cheese, :link);');
     $query->bindParam(':abv', $abv);
     $query->bindParam(':cheese', $cheese);
     $query->bindParam(':link', $link);
+    $query->bindParam(':hidden', $hidden);
     return $query->execute();
 }
+
+
+function deleteWine($id, $db) {
+    $query = $db->prepare('UPDATE `wines` SET `hidden` = \'1\' WHERE `id` = :id');
+    $query->bindParam(':id', $id);
+    return $query->execute();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
