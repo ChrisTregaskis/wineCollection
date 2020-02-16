@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.7.29)
 # Database: chris_collection_app
-# Generation Time: 2020-02-06 15:39:56 +0000
+# Generation Time: 2020-02-10 16:31:20 +0000
 # ************************************************************
 
 
@@ -48,8 +48,7 @@ VALUES
 	(2,'Haywire White Label Gamay Noir','2016','Canada','Dry red wine','Medium Bodied',13.0,'Camembert','https://www.novelwines.co.uk/products/haywire-white-label-gamay?_pos=6&_sid=93497c3a0&_ss=r','imgs/HAYWIRE_Gamay_Noir_Okanagan_Valley_Crush_Pad_Winery_x700.jpg'),
 	(3,'Alves de Sousa Quinta da Gaivosa LBV Porto','2013','Portugal','Fortified dessert wine','Not applicaple',20.0,'Stilton','https://www.novelwines.co.uk/collections/portugal/products/alves-de-sousa-quinta-da-gaivosa-lbv-porto','imgs/ALVES_DE_SOUSA_Quinta_da_Gaivosa_LBV_Porto_ee1be277-aea9-485f-ab1d-eea4557f2de2_x700.jpg'),
 	(4,'Bodegas Vinatigo Gual','2016','Tenerife','Dry white wine','Full Bodied',13.0,'Tomme de Chevre goats cheese','https://www.novelwines.co.uk/collections/white-wines/products/bodegas-vinatigo-gual','imgs/BODEGAS_VINATIGO_Gual_6bfe6033-ac6c-42dc-a08e-169db6b7da7f_x700.jpg'),
-	(9,'Dennis Garcia','2013','Ut at dolorem volupt','Aut aliquid assumend','Minima in voluptatem',20.0,'Et corporis quam pro','Occaecat minus nulla','imgs/cheese-4592091_1920.jpg'),
-	(10,'Peter Sanchez','1984','Modi quis exercitati','Laboris qui labore i','Esse quia dolore eo',5.0,'Sit in sint dolorum','Dolores minim repell','imgs/cheese-4592091_1920.jpg');
+	(14,'Michael Aguirre','2012','Pariatur Reprehende','Quo esse omnis iust','Voluptatum dolore do',75.0,'Delectus ut ea dolo','https://www.novelwines.co.uk/','imgs/cheese-4592091_1920.jpg');
 
 /*!40000 ALTER TABLE `wines` ENABLE KEYS */;
 UNLOCK TABLES;
